@@ -3,10 +3,7 @@
   <groupId>jana</groupId>
   <artifactId>mavenproject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
-  
 
- 
     <dependencies>
 <dependency>
 <groupId>org.testng</groupId>
@@ -20,12 +17,9 @@
      <maven.compiler.target>1.8</maven.compiler.target>
 </properties>
 
-
-
-
 <profiles>
 <profile>
-<id>class1</id>
+<id>login</id>
 <build>
 <plugins>
 
@@ -35,7 +29,7 @@
 <version>3.0.0-M7</version>
 <configuration>
 <suiteXmlFiles>
-<suiteXmlFile>testng_createContact.xml</suiteXmlFile>
+<suiteXmlFile>testng.xml</suiteXmlFile>
 </suiteXmlFiles>
 </configuration>
 </plugin>
@@ -45,7 +39,7 @@
 </profile>
 
 <profile>
-<id>class2</id>
+<id>regTest</id>
 <build>
 <plugins>
 
