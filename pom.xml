@@ -5,50 +5,66 @@
   <version>0.0.1-SNAPSHOT</version>
   
   
-  <dependencies>
 
-		
-		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>7.4.0</version>
-			<scope>test</scope>
-		</dependency>
-		
-		
+ 
+    <dependencies>
+<dependency>
+<groupId>org.testng</groupId>
+<artifactId>testng</artifactId>
+<version>7.4.0</version>
 
-	</dependencies>
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.10.1</version>
-					<configuration>
-						<verbose>true</verbose>
-						<fork>true</fork>
-						<executable>
-							<!-- path-to-javac -->
-						</executable>
-						<compilerVersion>1.3</compilerVersion>
-					</configuration>
-				</plugin>
-				<plugin>
+</dependency>
+</dependencies>
+<properties>
+     <maven.compiler.source>1.8</maven.compiler.source>
+     <maven.compiler.target>1.8</maven.compiler.target>
+</properties>
 
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>3.0.0-M7</version>
-					<configuration>
-						<suiteXmlFiles>
-							<suiteXmlFile>testng.xml</suiteXmlFile>
-						</suiteXmlFiles>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
+
+
+
+<profiles>
+<profile>
+<id>class1</id>
+<build>
+<plugins>
+
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-surefire-plugin</artifactId>
+<version>3.0.0-M7</version>
+<configuration>
+<suiteXmlFiles>
+<suiteXmlFile>testng_createContact.xml</suiteXmlFile>
+</suiteXmlFiles>
+</configuration>
+</plugin>
+
+</plugins>
+</build>
+</profile>
+
+<profile>
+<id>class2</id>
+<build>
+<plugins>
+
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-surefire-plugin</artifactId>
+<version>3.0.0-M7</version>
+<configuration>
+<suiteXmlFiles>
+<suiteXmlFile>testng.xml</suiteXmlFile>
+</suiteXmlFiles>
+</configuration>
+</plugin>
+
+</plugins>
+</build>
+</profile>
+
+</profiles>
 
 
 </project>
